@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #16324f);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background-color: #000;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 8px 12px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #fff;
+      color: #000;
+      border-radius: 5px;
+    }
+
+    .about {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .about-content {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 700px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .about-content h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .about-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+      color: #eee;
+    }
+
+    footer {
+      background-color: #000;
+      padding: 25px 20px;
+      text-align: center;
+      color: #ccc;
+    }
+
+    footer h3 {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    footer p {
+      margin: 8px 0;
+    }
+
+    .footer-links {
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      color: #66a6ff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="pro.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm <strong>JananiKarthikeyan</strong>, a frontend developer passionate about creating elegant, responsive, and engaging web experiences.
+        I enjoy working with HTML, CSS, and JavaScript to build clean, interactive, and functional websites.
+        My mission is to combine design with functionality to build meaningful user interfaces.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <h3>JananiKarthikeyan>
+    <p>Frontend Developer</p>
+    <p>"Design with purpose. Code with clarity."</p>
+    <div class="footer-links">
+      <a href="index.html">Home |</a>
+      <a href="about.html">About |</a>
+      <a href="pro.html">Projects |</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>

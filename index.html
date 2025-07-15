@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive 3D Portfolio</title>
+  <style>
+    /* RESET & BASIC */
+    * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+    body { font-family:'Segoe UI', sans-serif; color:#fff; background:lightsalmon; }
+    a { text-decoration:none; color:inherit; }
+
+    /* NAVBAR */
+    header { position:fixed; width:100%; top:0; left:0; background:black; backdrop-filter:blur(10px); z-index:100; }
+    nav { display:flex; justify-content:center; padding:1rem; gap:2rem; }
+    nav a { padding:.5rem 1rem; transition:.3s; }
+    nav a:hover { background:#333; color:white ; border-radius:5px; }
+
+    /* HERO SECTION */
+    .hero { height:100vh;  display:flex; flex-direction:column; justify-content:center; align-items:center;
+      perspective:1000px; background:linear-gradient(135deg,#89f7fe,#66a6ff ,purple); }
+    .hero h1 { font-size:3rem; margin-bottom:1rem; animation:slideDown 1s ease both; color: purple;}
+    .hero p { font-size:1.25rem; animation:slideUp 1s ease .5s both;color: purple; }
+    @keyframes slideDown { from { opacity:0; transform:translateY(-50px) rotateX(20deg);} to{opacity:1;transform:none;} }
+    @keyframes slideUp   { from { opacity:0; transform:translateY(50px) rotateX(-20deg);} to{opacity:1;transform:none;} }
+    #about{
+     background-color: #89f7fe;
+     width: 1500px;
+     margin-top: 20px;
+     text-align: center;
+     color: purple;
+}
+#projects{
+    background-color:  #89f7fe;
+    width: 1500px;
+    margin-top: 20px;
+    text-align: center;
+}
+#skills{
+    background-color: #89f7fe;
+     width: 1500px;
+    margin-top: 20px;
+}
+#resume{
+    background-color: #89f7fe;
+     width: 1500px;
+    margin-top: 20px; 
+    color: purple;
+    padding-top: 50px;
+    text-align: center;
+}
+
+#contact{
+       background-color: #89f7fe;
+     width: 1500px;
+    margin-top: 20px; 
+    padding-top: 50px;
+    text-align: center;
+    color: purple;
+}
+
+    /* SECTION STYLING */
+    section { padding:100px 20px; max-width:1000px; margin:0 auto; opacity:0; transform:translateY(50px); transition:1s; }
+    section.in-view { opacity:1; transform:translateY(0); }
+
+    /* PROJECT CARDS */
+    .projects { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:2rem; }
+    .card {
+      background:slategray; padding:1rem; border-radius:10px; box-shadow:0 10px 20px rgba(49, 13, 13, 0.938);
+      transform-style:preserve-3d; transition:transform .5s;
+    }
+    .card:hover { transform:rotateY(15deg) rotateX(5deg) scale(1.05); }
+    .card h3 { margin-bottom:.5rem; }
+    .card p { font-size:.9rem; margin-right: 20px; }
+
+    /* SKILLS BAR */
+    .bar { background:#eee; border-radius:10px; overflow:hidden; margin:1rem 0; }
+    .bar div {
+      height:20px; width:0; background:linear-gradient(to right,#00ff37,#e52e71);
+      transition:1s ease-in-out;
+      text-align:right; padding-right:10px; color:#fff;
+    }
+
+    /* CONTACT FORM */
+    .contact-form input, .contact-form textarea {
+      padding:.75rem; width:100%; margin:.5rem 0; border:1px solid lightblue; border-radius:5px;
+      transition:border .3s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {  outline :none; }
+    .contact-form button {
+      padding:.75rem 1.5rem; background:#66a6ff; border:none; color:#fff; font-weight:bold;
+      border-radius:5px; cursor:pointer; transition:background .3s;
+    }
+    .contact-form button:hover { background:#557dd1; }
+
+    /* FOOTER */
+    footer { background:#333; color:#fff; text-align:center; padding:2rem 1rem; position:relative; }
+    .social-icons { display:flex; justify-content:center; gap:1rem; margin-bottom:1rem; }
+    .social-icons a {
+      background:#fff; color:#333; padding:.75rem; border-radius:50%;
+      display:inline-flex; align-items:center; justify-content:center;
+      font-size:1.2rem; transition:.3s;
+    }
+    .social-icons a:hover { transform:translateY(-5px); background:#66a6ff; color:#fff; }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="pro.html">Projects</a>
+      <a href="skills.html">Skills</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <h1>I'm Janani Karthikeyan</h1>
+    <p >Frontend Developer • Interactive & AI tools User</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <img src="avater.avif" alt="avater"  height="110px" width="110px" >
+    <h2>About Me</h2>
+    <p style="color: #e52e71;">I'm a passionate and curious frontend developer with a love for clean design, smooth animations, and interactive experiences.
+      <br>   I enjoy bringing ideas to life in the browser using HTML, CSS, JavaScript, and modern frameworks.Outside of coding, I enjoy art, music, and spending time in nature. I'm excited about solving real-world problems through beautiful, accessible, and intuitive web interfaces.</p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h1 style="color: purple; ">Projects</h1>
+    <br><br><br>
+    <div class="projects">
+      <div class="card">
+        <h3>To Do List App</h3>
+        <p> To-Do List App
+Skills Used: HTML, CSS, JavaScript 
+Why It’s Great: Shows DOM manipulation and JS logic.</p>
+      </div>
+      <div class="card">
+        <h3>Weather App (API-Based)</h3>
+        <p>Skills Used: HTML, CSS, JavaScript, OpenWeatherMap API
+Why It’s Great: Shows how you use real APIs and display data.</p>
+      </div>
+      <div class="card">
+        <h3>Quiz App</h3>
+        <p>Skills Used: HTML, CSS, JavaScript
+Why It’s Great: Demonstrates interactivity, logic building, and dynamic content updates.
+
+</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h1 style="color: purple; text-align: center; ">Skills</h1>
+    <div class="bar"><div data-width="90%">HTML</div></div>
+    <div class="bar"><div data-width="85%">CSS</div></div>
+    <div class="bar"><div data-width="55%">JavaScript</div></div>
+    <div class="bar"><div data-width="80%">Editig</div></div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume">
+    <h2>Resume</h2>
+    <p><a href="#" style="color:purple;">Download the Resume</a></p><br><br>
+    <div class="button">
+    <button style="background-color: #333; color: white; padding: 10px; "><b>click here!</b></button>
+ </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <h3>JananiKarthikeyan</h3>
+    <p>Frontend Developer</p>
+    <p>"Turning designs into delightful experiences."</p>
+    <div class="footer-links">
+    <a href="index.html">Home |</a>
+      <a href="about.html">About |</a>
+      <a href="pro.html">Projects |</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <!-- FONTAWESOME -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- JS INTERACTIVITY -->
+  <script>
+    // Fade-in on scroll
+    const onScroll = () => {
+      document.querySelectorAll("section").forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) sec.classList.add("in-view");
+      });
+    };
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+
+    // Skill bar animations
+    const runSkills = () => {
+      document.querySelectorAll(".bar div").forEach(b => {
+        b.style.width = b.getAttribute("data-width");
+      });
+    };
+    window.addEventListener("scroll", () => {
+      const el = document.getElementById("skills");
+      if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+        runSkills();
+        window.removeEventListener("scroll", runSkills);
+      }
+    });
+
+    // Form submit alert & dynamic year
+    document.querySelector('.contact-form').addEventListener('submit', e => {
+      e.preventDefault();
+      alert("Thanks! I'll get back to you soon.");
+      e.target.reset();
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Social icon click alerts
+    document.querySelectorAll(".social-icons a").forEach(el => {
+      el.addEventListener("click", e => {
+        e.preventDefault();
+        alert("Redirecting to " + el.id.charAt(0).toUpperCase() + el.id.slice(1));
+      });
+    });
+  </script>
+</body>
+</html>
